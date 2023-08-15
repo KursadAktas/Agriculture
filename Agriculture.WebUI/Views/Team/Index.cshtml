@@ -1,0 +1,57 @@
+﻿@using EntityLayer.Concrete;
+@model List<Team>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Takım Arkadaşlarınızın Listesi</h4>
+         
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                       <tr>
+                            <th>Görsel</th>
+                           <th>Id</th>
+                           <th>Ad Soyad</th>
+                           <th>Görev</th>
+                           <th>Facebook</th>
+                           <th>Instagram</th>
+                           <th>WebURL</th>
+                           <th>Sil</th>
+                           <th>Düzenle</th>
+
+
+                       </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            
+                       
+                        <tr>
+                            <td class="py-1"><img src="@item.ImageUrl" alt="image" />
+                            </td>
+                           <td>@item.TeamId</td>
+                           <td>@item.PersonelName</td>
+                           <td>@item.Title</td>
+                           <td>@item.FacebookUrl</td>
+                           <td>@item.InstagramUrl</td>
+                           <td>@item.WebSiteUrl</td>
+                                <td><a class="btn btn-outline-danger" asp-controller="Team" asp-action="Delete" asp-route-id="@item.TeamId">Sil</a></td>
+                                <td><a class="btn btn-outline-success" asp-controller="Team" asp-action="Update" asp-route-id="@item.TeamId">Güncelle</a></td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+               
+            </div>
+            <br />
+            <a asp-controller="Team" asp-action="AddTeam" class="btn btn-outline-info">Yeni Personel Girişi</a>
+        </div>
+    </div>
+</div>
+

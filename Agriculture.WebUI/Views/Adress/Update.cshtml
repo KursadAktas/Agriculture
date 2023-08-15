@@ -1,0 +1,48 @@
+﻿@using EntityLayer.Concrete;
+@model Adress
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Adres Bilgisi Güncelleme Sayfası</h4>
+
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    @Html.HiddenFor(x=>x.AdressId)
+                    <label for="exampleInputName1">Açıklama 1</label>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Açıklama1.." asp-for="Description">
+
+                    <br />
+                    <label for="exampleInputName1">Açıklama 2</label>
+                    <span asp-validation-for="Description2" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Açıklama2.." asp-for="Description2">
+                    <br />
+                    <label for="exampleInputName1">Açıklama 3</label>
+                    <span asp-validation-for="Description3" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Açıklama3.." asp-for="Description3">
+                    <br />
+                    <label for="exampleInputName1">Açıklama 4</label>
+                    <span asp-validation-for="Description4" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Açıklama4.." asp-for="Description4">
+                    <br />
+                    <label for="exampleInputName1">Harita Konumu</label>
+                    <span asp-validation-for="MapInfo" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Harita Bilgisi.." asp-for="MapInfo">
+
+                </div>
+             
+
+
+                <button type="submit" class="btn btn-info me-2">Kaydet</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+

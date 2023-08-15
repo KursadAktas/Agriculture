@@ -1,0 +1,21 @@
+﻿@using EntityLayer.Concrete;
+@model Contact
+
+
+<div class="col-md-9 contact-middle">
+	<h2>Merhaba Deyin.</h2>
+	<form method="post" asp-controller="Default" asp-action="SendMessage">
+		<div class="form-agileinfo">
+			<p>Adınız Soyadınız</p>
+			<input type="text" asp-for="Name" placeholder="Adsoyad.." required="" />
+			<p>Mail Adresiniz</p>
+			<input type="email" asp-for="Mail" placeholder="email" required="" />
+		</div>
+		<div class="form-agileits-w3layouts">
+			<p>Mesajınız</p>
+			<textarea asp-for="Message" placeholder="Your message" required=""></textarea>
+			<input type="submit" value="MESAJI GÖNDER">
+		</div>
+		<div class="clearfix"></div>
+	</form>
+</div>
